@@ -1,0 +1,193 @@
+.hero {
+  background-color: #f3f0eb;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: auto;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hero h1 {
+  font-size: 26px;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.search-form {
+  margin: 0;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 480px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #6b7280;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #6b8e3f;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background-color: #6b8e3f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background-color: #5a7a35;
+}
+
+.categories-filter {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 6px 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
+
+.category-btn:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.category-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.category-label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.hero-images {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  min-width: 380px;
+}
+
+.recipe-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.recipe-img-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d4a574 0%, #e5d4c1 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero-images {
+    min-width: 320px;
+  }
+
+  .recipe-img,
+  .recipe-img-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 0.8rem;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .categories-filter {
+    justify-content: flex-start;
+  }
+
+  .hero-images {
+    width: 100%;
+    min-width: auto;
+    justify-content: center;
+  }
+}
