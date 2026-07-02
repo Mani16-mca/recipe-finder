@@ -47,11 +47,13 @@ const RecipeHero: React.FC<HeroProps> = ({ searchQuery, onSearch, isLoggedIn = f
         backgroundAttachment: "fixed",
         margin: "0",
         position: "relative",
-        minHeight: "500px",
+        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        paddingTop: "20px"
+        paddingTop: "20px",
+        boxSizing: "border-box"
       }}
     >
       {showPrompt && <LoginPrompt message="Log in to search and filter recipes." onClose={() => setShowPrompt(false)} />}
