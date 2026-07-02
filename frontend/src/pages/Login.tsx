@@ -15,6 +15,8 @@ const Login: React.FC<{ setIsLoggedIn: (v: boolean) => void }> = ({ setIsLoggedI
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const LOGO = "https://cdn-icons-png.flaticon.com/128/3183/3183463.png";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setApiError("");
@@ -37,7 +39,122 @@ const Login: React.FC<{ setIsLoggedIn: (v: boolean) => void }> = ({ setIsLoggedI
   };
 
   return (
-    <div style={{ backgroundImage: `url(${loginBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", display: "flex", alignItems: "center", justifyContent: "center", padding: "4rem 2rem" }}>
+    <div style={{ backgroundImage: `url(${loginBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", display: "flex", alignItems: "center", justifyContent: "center", padding: "4rem 2rem", minHeight: "100vh", flexDirection: "column" }}>
+      {/* Navbar */}
+      <div style={{ 
+        width: "100%",
+        padding: "20px 80px",
+        boxSizing: "border-box",
+        display: "flex",
+        justifyContent: "center",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100
+      }}>
+        <div style={{
+          background: "#ffffff",
+          borderRadius: "50px",
+          padding: "10px 30px",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "80%",
+          boxSizing: "border-box",
+          gap: "30px"
+        }}>
+          {/* Logo */}
+          <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <img src={LOGO} alt="Logo" style={{ width: "32px", height: "32px", objectFit: "contain" }} />
+            <span style={{ color: "#1f2937", fontSize: "15px", fontWeight: "700", fontFamily: "'Inter', sans-serif", whiteSpace: "nowrap" }}>
+              Recipe <span style={{ color: "#d97706" }}>Finder</span>
+            </span>
+          </Link>
+
+          {/* Navigation Links - Center */}
+          <div style={{ display: "flex", gap: "30px", alignItems: "center", margin: "0 auto" }}>
+            <Link to="/home" style={{ 
+              textDecoration: "none",
+              color: "#6b7280", 
+              fontSize: "13px", 
+              fontWeight: "500", 
+              fontFamily: "'Inter', sans-serif",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              transition: "color 0.2s"
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#d97706")} 
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#6b7280")}>
+              <img src="https://cdn-icons-png.flaticon.com/128/747/747376.png" alt="Home" style={{ width: "16px", height: "16px" }} />
+              Home
+            </Link>
+
+            <Link to="/favorites" style={{ 
+              textDecoration: "none",
+              color: "#6b7280", 
+              fontSize: "13px", 
+              fontWeight: "500", 
+              fontFamily: "'Inter', sans-serif",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              transition: "color 0.2s"
+            }} 
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#d97706")} 
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#6b7280")}>
+              <img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="Favorites" style={{ width: "16px", height: "16px" }} />
+              Favorites
+            </Link>
+
+            <Link to="/about" style={{ 
+              textDecoration: "none",
+              color: "#6b7280", 
+              fontSize: "13px", 
+              fontWeight: "500", 
+              fontFamily: "'Inter', sans-serif",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              transition: "color 0.2s"
+            }} 
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#d97706")} 
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#6b7280")}>
+              <img src="https://cdn-icons-png.flaticon.com/128/1995/1995505.png" alt="About Us" style={{ width: "16px", height: "16px" }} />
+              About Us
+            </Link>
+          </div>
+
+          {/* Auth section - Right */}
+          <div style={{ display: "flex", gap: "12px", alignItems: "center", flexShrink: 0 }}>
+            <Link to="/signup" style={{ textDecoration: "none" }}>
+              <button
+                style={{ 
+                  background: "#7c9653", 
+                  color: "white", 
+                  border: "none", 
+                  padding: "8px 16px", 
+                  borderRadius: "4px", 
+                  fontSize: "13px", 
+                  fontWeight: "500", 
+                  cursor: "pointer", 
+                  fontFamily: "'Inter', sans-serif",
+                  transition: "all 0.2s"
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#6a8347")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#7c9653")}
+              >
+                Sign Up
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Login Form */}
       <div style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(6px)", borderRadius: "20px", padding: "3rem 2.8rem", width: "100%", maxWidth: "500px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", border: "1px solid rgba(255,255,255,0.8)" }}>
 
           <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
